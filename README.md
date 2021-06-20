@@ -1,5 +1,5 @@
-# GitHub Action: Run PHPMD with ReviewDog
-This action runs [PHP Mess Detector](https://phpmd.org) with [ReviewDog](https://github.com/reviewdog/reviewdog).
+# GitHub Action: Run PHPCS with ReviewDog
+This action runs [PHP Codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) with [ReviewDog](https://github.com/reviewdog/reviewdog).
 
 ## Inputs
 ### `github_token`
@@ -15,14 +15,15 @@ Reporter of reviewdog command [github-pr-check,github-check,github-pr-review]. I
 
 ### `standard`
 Can be any one or more of (in a comma-separated list without spaces):
-- `cleancode`
-- `codesize`
-- `controversial`
-- `design`
-- `naming`
-- `unusedcode`
+- `MySource`
+- `PEAR`
+- `PSR1`
+- `PSR12`
+- `PSR2`
+- `Squiz`
+- `Zend`
 or a custom rules configuration file path.
-**Default** `cleancode,codesize,controversial,design,naming,unusedcode`
+**Default** `PSR1,PSR2,PSR12`
 
 ### `target_directory`
 **Default** `src`
@@ -38,18 +39,18 @@ or a custom rules configuration file path.
 #     branches: [ master, develop ]
 
 # jobs:
-  phpmd-linter:
-    name: PHPMD
+  phpcs-linter:
+    name: PHPCS
     runs-on: ubuntu-latest
     steps:
         - name: Check out code into the workspace
             uses: actions/checkout@v2
-        - name: Run php check code with reviewdog
-            uses: GeneaLabs/action-reviewdog-phpmd@1.0.0
+        - name: Check code with reviewdog
+            uses: GeneaLabs/action-reviewdog-phpcs@1.0.0
             with:
-                github_token: '${{ github.token }}'
+                github_token: '${{ secret.GITHUB_TOKEN }}'
                 level: 'warning'
                 reporter: 'github-pr-check'
-                standard: 'cleancode,codesize,controversial,design,naming,unusedcode'
+                standard: 'PSR1,PSR2,PSR12'
                 target_directory: 'src'
 ```

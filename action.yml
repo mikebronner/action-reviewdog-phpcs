@@ -1,4 +1,4 @@
-name: 'Run PHPCS with ReviewDog'
+name: 'PHPCS code anlaysis with ReviewDog'
 description: '🐾 Run PHP Codesniffer with ReviewDog.'
 author: 'Mike Bronner'
 inputs:

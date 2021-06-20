@@ -22,6 +22,10 @@ inputs:
     description: Directory to run checks against.
     default: 'src'
 
+  executable:
+    description: Specify your own PHPCS executable. This is useful when loading your own Codesniffer.conf files.
+    default: '/usr/local/bin/phpcs.phar'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

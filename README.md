@@ -28,6 +28,10 @@ or a custom rules configuration file path.
 ### `target_directory`
 **Default** `src`
 
+#### `executable`
+Specify your own PHPCS executable. This is useful when loading your own Codesniffer.conf files.
+**Default** `/usr/local/bin/phpcs.phar`
+
 ## Usage
 ```yml
 # name: Laravel Package Tests
@@ -53,4 +57,5 @@ or a custom rules configuration file path.
                 reporter: 'github-pr-check'
                 standard: 'PSR1,PSR2,PSR12'
                 target_directory: 'src'
+                executable: '/usr/local/bin/phpcs.phar'
 ```

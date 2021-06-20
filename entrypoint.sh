@@ -7,5 +7,5 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-php /usr/local/bin/phpcs.phar --report=checkstyle --standard=${INPUT_STANDARD} ${INPUT_TARGET_DIRECTORY}\
+php /usr/local/bin/phpcs.phar --report=checkstyle --standard=${INPUT_STANDARD} ${INPUT_TARGET_DIRECTORY} -q \
     | reviewdog -name=PHPCS -f=checkstyle -reporter=${INPUT_REPORTER} -level=${INPUT_LEVEL} -diff='git diff'

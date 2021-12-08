@@ -1,4 +1,4 @@
-FROM php:7.4.1-alpine
+FROM php:8.1.0-alpine
 
 ENV REVIEWDOG_VERSION=
 

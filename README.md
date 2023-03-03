@@ -52,7 +52,7 @@ Specify your own PHPCS executable. This is useful when loading your own Codesnif
         - name: Check code with reviewdog
             uses: GeneaLabs/action-reviewdog-phpcs@1.0.0
             with:
-                github_token: '${{ secret.GITHUB_TOKEN }}'
+                github_token: '${{ secrets.GITHUB_TOKEN }}'
                 level: 'warning'
                 reporter: 'github-pr-check'
                 standard: 'PSR1,PSR2,PSR12'

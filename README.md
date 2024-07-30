@@ -50,7 +50,7 @@ Specify your own PHPCS executable. This is useful when loading your own Codesnif
         - name: Check out code into the workspace
             uses: actions/checkout@v2
         - name: Check code with reviewdog
-            uses: GeneaLabs/action-reviewdog-phpcs@1.0.0
+            uses: mikebronner/action-reviewdog-phpcs@1.0.0
             with:
                 github_token: '${{ secret.GITHUB_TOKEN }}'
                 level: 'warning'
